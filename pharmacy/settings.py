@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'edc_dashboard.middleware.DashboardMiddleware',
-#     'edc_subject_dashboard.middleware.DashboardMiddleware',
+    'edc_subject_dashboard.middleware.DashboardMiddleware',
 ]
 
 ROOT_URLCONF = 'pharmacy.urls'
@@ -152,6 +152,7 @@ DASHBOARD_URL_NAMES = {
 }
 
 DASHBOARD_BASE_TEMPLATES = {
+    'listboard_base_template': 'pharmacy/base.html',
     'patient_listboard_template': 'pharma_dashboard/listboard.html',
     'data_manager_listboard_template': 'edc_data_manager/listboard.html',
 }
