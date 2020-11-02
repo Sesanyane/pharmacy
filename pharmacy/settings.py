@@ -148,11 +148,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'pharmacy', 'static')
 
 DASHBOARD_URL_NAMES = {
     'patient_listboard_url': 'pharma_dashboard:patient_listboard_url',
+    'dispense_listboard_url': 'pharma_dashboard:dispense_listboard_url',
     'data_manager_listboard_url': 'edc_data_manager:data_manager_listboard_url',
 }
 
 DASHBOARD_BASE_TEMPLATES = {
     'listboard_base_template': 'pharmacy/base.html',
     'patient_listboard_template': 'pharma_dashboard/listboard.html',
+    'dispense_listboard_template': 'pharma_dashboard/dispensary/listboard.html',
     'data_manager_listboard_template': 'edc_data_manager/listboard.html',
 }
