@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Auto-generated tag files
+tags
+.project
+.pydevproject
+
 # Distribution / packaging
 .Python
 build/
