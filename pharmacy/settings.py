@@ -33,7 +33,7 @@ SECRET_KEY = 'sdjsvamxjn)p^p7a)n5-2&+y7&2n92ivw*)$%fzt#o@o1igmi6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'pharma-dev.bhp.org.bw', '127.0.0.1']
 
 # Application definition
 
