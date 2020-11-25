@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import configparser
 import os
 from pathlib import Path
 
@@ -18,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 APP_NAME = 'pharmacy'
 SITE_ID = 1
 
-ETC_DIR = '/etc/'
+ETC_DIR = '/etc/pharmacy/'
 
 LOGIN_REDIRECT_URL = 'home_url'
 
@@ -92,13 +93,25 @@ WSGI_APPLICATION = 'pharmacy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+mysql_config = configparser.ConfigParser()
+mysql_config.read(os.path.join(ETC_DIR, 'mysql.ini'))
+
+HOST = mysql_config['mysql']['host']
+DB_USER = mysql_config['mysql']['user']
+DB_PASSWORD = mysql_config['mysql']['password']
+DB_NAME = mysql_config['mysql']['database']
+PORT = mysql_config['mysql']['port']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': HOST,   # Or an IP Address that your DB is hosted on
+        'PORT': PORT,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
