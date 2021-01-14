@@ -38,6 +38,7 @@ urlpatterns = [
     
     path('edc_base/', include('edc_base.urls')),
     path('edc_device/', include('edc_device.urls')),
+    path('edc_label/', include('edc_label.urls')),
     path('pharma_subject/', include('pharma_subject.urls')),
     path('subject/', include('pharma_dashboard.urls')),
 

@@ -1,15 +1,15 @@
+import os
 from datetime import datetime
-
 from dateutil.tz import gettz
 from django.apps import AppConfig as DjangoAppConfig
+from django.conf import settings
 from django.core.management.color import color_style
 from edc_base.apps import AppConfig as BaseEdcBaseAppConfig
 from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
 from edc_facility.apps import AppConfig as BaseEdcFacilityAppConfig
 from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
-# from edc_metadata.apps import AppConfig as BaseEdcMetadataAppConfig
+from edc_label.apps import AppConfig as BaseEdcLabelAppConfig
 from edc_protocol.apps import AppConfig as BaseEdcProtocolAppConfig
-# from edc_visit_tracking.apps import AppConfig as BaseEdcVisitTrackingAppConfig
 from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, LOST_VISIT
 
 style = color_style()
@@ -39,36 +39,8 @@ class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
     identifier_prefix = '045'
 
 
-# class EdcVisitTrackingAppConfig(BaseEdcVisitTrackingAppConfig):
-#     visit_models = {
-#         'pharma_subject': ('subject_visit', 'pharma_subject.subjectvisit')}
-# 
-# 
-# class EdcFacilityAppConfig(BaseEdcFacilityAppConfig):
-#     country = 'botswana'
-#     definitions = {
-#         '7-day clinic': dict(days=[MO, TU, WE, TH, FR, SA, SU],
-#                              slots=[100, 100, 100, 100, 100, 100, 100]),
-#         '5-day clinic': dict(days=[MO, TU, WE, TH, FR],
-#                              slots=[100, 100, 100, 100, 100])}
-# 
-# 
-# class EdcMetadataAppConfig(BaseEdcMetadataAppConfig):
-# 
-#     reason_field = {'pharma_subject.subjectvisit': 'reason'}
-#     other_visit_reasons = [ 'off study', 'deferred', 'death']
-#     other_create_visit_reasons = [
-#         'initial_visit/contact', 'fu_visit/contact',
-#         'unscheduled_visit/contact', 'missed_visit']
-#     create_on_reasons = [SCHEDULED, UNSCHEDULED] + other_create_visit_reasons
-#     delete_on_reasons = [LOST_VISIT] + other_visit_reasons
-# 
-# 
-# class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
-#     identifier_pattern = subject_identifier
-# 
-# 
-# class EdcSmsAppConfig(BaseEdcSmsAppConfig):
-#     locator_model = 'pharma_subject.subjectlocator'
-#     consent_model = 'pharma_subject.subjectconsent'
-#     sms_model = 'pharma_subject.sms'
+class EdcLabelAppConfig(BaseEdcLabelAppConfig):
+    default_cups_server_ip = 'localhost'
+    default_printer_label = 'pharma_test_printer'
+    extra_templates_folder = os.path.join(
+        settings.STATIC_ROOT, 'pharmacy', 'label_templates')

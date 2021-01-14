@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import configparser
 import os
+from django.conf import settings
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,12 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_crypto_fields.apps.AppConfig',
     'edc_dashboard.apps.AppConfig',
-#     'edc_subject_dashboard.apps.AppConfig',
     'edc_device.apps.AppConfig',
     'edc_navbar.apps.AppConfig',
+    'edc_timepoint.apps.AppConfig',
     'pharma_dashboard.apps.AppConfig',
     'pharma_subject.apps.AppConfig',
     'pharmacy.apps.AppConfig',
+    'pharmacy.apps.EdcLabelAppConfig',
     'pharmacy.apps.EdcBaseAppConfig'
 ]
 
@@ -149,7 +151,6 @@ SITE_CODE = '1'
 DEFAULT_STUDY_SITE = '1'
 REVIEWER_SITE_ID = 41
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -157,6 +158,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'pharmacy', 'static')
+
+CUPS_SERVERS = 'localhost'
+LABEL_PRINTER = 'pharma_test_printer'
+LABEL_TEMPLATE_FOLDER = os.path.join(
+        settings.STATIC_ROOT, APP_NAME, 'label_templates')
 
 
 DASHBOARD_URL_NAMES = {
