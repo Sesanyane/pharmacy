@@ -168,6 +168,7 @@ LABEL_TEMPLATE_FOLDER = os.path.join(
 DASHBOARD_URL_NAMES = {
     'patient_listboard_url': 'pharma_dashboard:patient_listboard_url',
     'dispense_listboard_url': 'pharma_dashboard:dispense_listboard_url',
+    'stock_management_listboard_url': 'pharma_dashboard:stock_management_listboard_url',
     'data_manager_listboard_url': 'edc_data_manager:data_manager_listboard_url',
 }
 
@@ -175,5 +176,6 @@ DASHBOARD_BASE_TEMPLATES = {
     'listboard_base_template': 'pharmacy/base.html',
     'patient_listboard_template': 'pharma_dashboard/listboard.html',
     'dispense_listboard_template': 'pharma_dashboard/dispensary/listboard.html',
+    'stock_management_listboard_template': 'pharma_dashboard/stock_management/listboard.html',
     'data_manager_listboard_template': 'edc_data_manager/listboard.html',
 }
