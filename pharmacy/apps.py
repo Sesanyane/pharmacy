@@ -5,12 +5,9 @@ from django.apps import AppConfig as DjangoAppConfig
 from django.conf import settings
 from django.core.management.color import color_style
 from edc_base.apps import AppConfig as BaseEdcBaseAppConfig
-from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
-from edc_facility.apps import AppConfig as BaseEdcFacilityAppConfig
 from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from edc_label.apps import AppConfig as BaseEdcLabelAppConfig
 from edc_protocol.apps import AppConfig as BaseEdcProtocolAppConfig
-from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, LOST_VISIT
 
 style = color_style()
 

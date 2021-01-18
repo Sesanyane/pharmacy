@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'edc_dashboard.apps.AppConfig',
     'edc_device.apps.AppConfig',
     'edc_navbar.apps.AppConfig',
-    'edc_timepoint.apps.AppConfig',
     'pharma_dashboard.apps.AppConfig',
     'pharma_subject.apps.AppConfig',
     'pharmacy.apps.AppConfig',
