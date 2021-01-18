@@ -40,4 +40,4 @@ class EdcLabelAppConfig(BaseEdcLabelAppConfig):
     default_cups_server_ip = 'localhost'
     default_printer_label = 'pharma_test_printer'
     extra_templates_folder = os.path.join(
-        settings.STATIC_ROOT, 'pharmacy', 'label_templates')
+        settings.STATIC_ROOT, 'pharma_dashboard', 'label_templates')

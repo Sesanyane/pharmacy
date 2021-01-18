@@ -161,7 +161,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'pharmacy', 'static')
 CUPS_SERVERS = 'localhost'
 LABEL_PRINTER = 'pharma_test_printer'
 LABEL_TEMPLATE_FOLDER = os.path.join(
-        settings.STATIC_ROOT, APP_NAME, 'label_templates')
+        settings.STATIC_ROOT, 'pharma_dashboard', 'label_templates')
 
 
 DASHBOARD_URL_NAMES = {
